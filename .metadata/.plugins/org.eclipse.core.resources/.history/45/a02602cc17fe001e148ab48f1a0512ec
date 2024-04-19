@@ -1,0 +1,24 @@
+package com.mokcoding.ex01.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.mokcoding.ex01.domain.InfoVO;
+
+import lombok.extern.log4j.Log4j;
+
+@Controller
+@RequestMapping("/example3")
+@Log4j
+public class ExampleController3 {
+	
+	// info.jsp 페이지 호출
+	@GetMapping("/info")
+	public void infoGET(Module model) {// Model 객체 사용
+		log.info("infoGET()");
+		// vo 객체 생성 및 데이터 설정
+		InfoVO vo = new InfoVO();
+		vo.setName("목진혁");
+	}// end 
+}

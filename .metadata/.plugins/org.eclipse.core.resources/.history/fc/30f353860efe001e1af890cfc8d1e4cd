@@ -1,0 +1,19 @@
+package com.mokcoding.ex01.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.log4j.Log4j;
+
+@Controller
+@RequestMapping("/example2") // 상위 경로 설정
+@Log4j // Lombok Logj4 기능
+public class ExampleController2 {
+	
+	@GetMapping("/send")
+	public void sendGET() {
+		log.info("sendGET()"); // log 출력 기능
+	}
+	
+} // end ExampleController2

@@ -1,0 +1,9 @@
+package com.mokcoding.ex01.controller;
+
+import org.springframework.stereotype.Controller; // 서브릿기능 구현가능
+
+// POJO(Plain Old Java Object)
+@Controller // @Component도 가능 // 서브릿 기능 구현가능
+public class ExampleController1 {
+
+}

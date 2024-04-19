@@ -1,0 +1,17 @@
+package com.mokcoding.ex01.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller; // 서브릿기능 구현가능
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// POJO(Plain Old Java Object)
+@Controller // @Component도 가능 // 서브릿 기능 구현가능
+// @Controller로 선언된 객체는 Spring Container 관리
+@RequestMapping("/example1") // 상위 경로
+public class ExampleController1 {
+	// 로그를 사용하기 위한 객체
+	private static final Logger looger =
+			LoggerFactory.getLogger(ExampleController1.class);
+	
+}
