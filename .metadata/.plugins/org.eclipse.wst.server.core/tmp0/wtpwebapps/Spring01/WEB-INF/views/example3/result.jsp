@@ -10,7 +10,6 @@
 <body>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			console.log('로그');
 			const result = '${result}';
 			
 			if(result == 'success'){
