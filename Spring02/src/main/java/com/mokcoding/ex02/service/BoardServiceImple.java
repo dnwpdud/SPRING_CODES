@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.mokcoding.ex02.domain.BoardVO;
 import com.mokcoding.ex02.persistence.BoardMapper;
+import com.mokcoding.ex02.util.Pagination;
 
 import lombok.extern.log4j.Log4j;
 
@@ -46,6 +47,19 @@ public class BoardServiceImple implements BoardService{
 	public int deleteBoard(int boardId) {
 		log.info("deleteBoard()");
 		return boardMapper.delete(boardId);
+	}
+
+	@Override
+	public List<BoardVO> getPagingBoards(Pagination pagination) {
+		log.info("getPagingBoards()");
+		return boardMapper.selectListByPagination(pagination);
+	}
+
+	@Override
+	public int getTotalCount() {
+		log.info("getTotalCount()");
+		
+		return boardMapper.selectTotalCount();
 	}
 	
 }

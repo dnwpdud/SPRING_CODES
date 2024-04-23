@@ -1,5 +1,7 @@
 package com.mokcoding.ex02.parsistence;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.mokcoding.ex02.config.RootConfig;
 import com.mokcoding.ex02.domain.BoardVO;
 import com.mokcoding.ex02.persistence.BoardMapper;
+import com.mokcoding.ex02.util.Pagination;
 
 import lombok.extern.log4j.Log4j;
 
@@ -23,13 +26,23 @@ public class BoardMapperTest {
 	
 	@Test
 	public void test() {
-		testBoardInsert();
-		testBoardList();
-		testBoardByBoardId();
-		testBoardUpdate();
-		testBoarDelete();
+//		testBoardInsert();
+//		testBoardList();
+//		testBoardByBoardId();
+//		testBoardUpdate();
+//		testBoarDelete();
+		testBoardListPagination();
 	}
 	
+	private void testBoardListPagination() {
+		Pagination pagination = new Pagination(1, 5);
+		List<BoardVO> list = boardMapper.selectListByPagination(pagination);
+		for(BoardVO vo : list) {
+			log.info(vo);
+		}
+		
+	}
+
 	private void testBoardList() {
 		for(BoardVO boardVO : boardMapper.selectList()) {
 			log.info(boardVO);
@@ -59,5 +72,7 @@ public class BoardMapperTest {
 		int result = boardMapper.insert(vo);
 		log.info(result + "행 삽입");
 	} 
+	
+	
 	
 }// end 

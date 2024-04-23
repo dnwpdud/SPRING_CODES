@@ -76,5 +76,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE BOARD_ID = #{boardId}
 	
 	</delete>
-
+	
+	<select id="selectListByPagination" resultMap="boardResultMap">
+		SELECT * FROM (
+		SELECT ROW_NUMBER() OVER (ORDER BY BOARD_ID DESC) AS RN, BOARD.*
+		FROM BOARD
+		)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	<!-- 서브쿼리 -->
+	<!-- 전체 검한 쿼리에서 시작페이지부터 끝페이지을 나누어서 페이징 처리하는 쿼리 이다. -->
+	
+	<!-- resultType : 쿼리 결과를 자바 객체에 매핑하기 위해 사용 -->
+	<select id="selectTotalCount" resultType="Integer">
+		SELECT COUNT(*) TOTAL_COUNT FROM BOARD
+	</select>
 </mapper>

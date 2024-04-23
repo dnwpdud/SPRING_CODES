@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.mokcoding.ex02.domain.BoardVO;
+import com.mokcoding.ex02.util.Pagination;
 
 @Mapper
 public interface BoardMapper {
@@ -20,4 +21,8 @@ public interface BoardMapper {
 	
 	int delete(int boardId); // 특정 게시글 삭제
 	
+	// 전체 게시글 페이징 처리
+	List<BoardVO> selectListByPagination(Pagination pagination); 
+	int selectTotalCount();
+	 
 }
