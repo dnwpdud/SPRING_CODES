@@ -91,4 +91,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectTotalCount" resultType="Integer">
 		SELECT COUNT(*) TOTAL_COUNT FROM BOARD
 	</select>
+	
+	
 </mapper>

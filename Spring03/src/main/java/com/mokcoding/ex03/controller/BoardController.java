@@ -12,7 +12,7 @@ import lombok.extern.log4j.Log4j;
 public class BoardController {
 
    @GetMapping("/detail")
-   public void detail() {
+   public void detail(Integer num) {
       log.info("detail()");
    }
 
