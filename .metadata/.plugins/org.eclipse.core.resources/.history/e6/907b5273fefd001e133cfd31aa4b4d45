@@ -1,8 +1,0 @@
-package com.mokcoding.ex01.controller;
-
-import org.springframework.stereotype.Controller;
-
-@Controller // @Component도 가능
-public class ExampleController1 {
-
-}

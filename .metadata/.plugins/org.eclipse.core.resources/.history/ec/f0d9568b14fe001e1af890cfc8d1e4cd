@@ -1,9 +1,0 @@
-package com.mokcoding.ex01.domain;
-
-import java.util.Date;
-
-public class ExampleVO {
-	private String name; // parameter name = "name"
-	private String email; // parameter name = "emailemail"
-	private Date birthDate; // parameter name = "birthDate"
-}
